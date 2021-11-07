@@ -1,0 +1,7 @@
+@PACKAGE_INIT@
+
+include(${CMAKE_CURRENT_LIST_DIR}/mytestlibTargets.cmake)
+
+set(mytestlib_INCLUDE_DIRS "@PACKAGE_INCLUDE_INSTALL_DIR@")
+get_target_property(LINK_LIBS mytestlib LINK_LIBRARIES)
+set(mytestlib_LIBRARIES ${LINK_LIBS})
