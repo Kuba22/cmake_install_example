@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(mytestlib VERSION 0.1)
 
-# find_package(OpenCV REQUIRED)
+find_package(OpenCV REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED mytestlib.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/mytestlib>  
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include/mytestlib> )
-# target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBRARIES})
 
 add_executable(example main.cpp)
 target_link_libraries(example mytestlib)
