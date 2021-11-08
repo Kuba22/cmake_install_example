@@ -1,4 +1,4 @@
-#include "mytestlib/mytestlib.h"
+#include "mytestlib.h"
 
 int main(){
     MyTest mt;
